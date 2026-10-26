@@ -89,6 +89,7 @@
     <a href="/siapayangnilep/privacy.html">Privasi Siapa yang Nilep?</a> · <a href="/kangparkir/privacy.html">Privasi Kang Parkir</a>
   </footer>
 </main>
+<script src="/gw.js" data-game="portal" async></script>
 <script>
   // game yang pernah dimainkan naik ke atas dengan tombol "Lanjutkan" (data permainan ada di perangkat ini, satu domain)
   (function(){
@@ -102,6 +103,11 @@
     });
     // penanda hanya di kartu paling atas, supaya tidak ada dua "terakhir"
     if(played.length)list.querySelector('.recent').hidden=false;
+    [].slice.call(list.querySelectorAll('a.game')).forEach(function(a,i){
+      a.addEventListener('click',function(){
+        (window.gwq=window.gwq||[]).push(['game_card_click',{target_game:a.dataset.game,position:i+1,continued:played.indexOf(a)>=0}]);
+      });
+    });
   })();
 </script>
 </body>

@@ -2,7 +2,7 @@
 
 Tujuan: satu tempat untuk melihat performa **setiap game** (berapa yang datang, berapa yang main, berapa yang kembali, dari mana asalnya) dan membandingkan game satu dengan yang lain, tanpa mengumpulkan data pribadi.
 
-Status: **desain**. Belum aktif sampai ada Measurement ID GA4 (`G-XXXXXXX`).
+Status: **aktif** sejak 26 Oktober 2026, Measurement ID `G-KQKB2QGY83` (property "Game Warga"). Bagian 5 (dimensi khusus) dan key events masih perlu didaftarkan manual di GA.
 
 ---
 
@@ -13,7 +13,7 @@ Status: **desain**. Belum aktif sampai ada Measurement ID GA4 (`G-XXXXXXX`).
 | Property | **Satu** property GA4 "Game Warga" | Semua game di satu domain, jadi perpindahan antar-game dan retensi portal bisa dilihat. Laporan per game dipisah lewat dimensi `game_id`. |
 | Data stream | Satu web stream `gamewarga.com` | Path sudah membedakan game (`/siapayangnilep/`, `/kangparkir/`). |
 | Aplikasi Android/iOS (Capacitor) | Pakai web stream yang sama, dengan `page_location` = `https://gamewarga.com/<game>/` dan `platform=android|ios` | Tidak perlu Firebase SDK. Angka app dan web langsung bisa dibandingkan. |
-| Pemasangan | Satu skrip bersama `/gw.js` dari portal, dimuat oleh setiap game | Nama event dan aturan privasi dijaga di satu file. Game cukup memanggil `gw.track('game_end', {...})`. |
+| Pemasangan | Satu skrip bersama `/gw.js` dari portal, dimuat oleh setiap game | Nama event dan aturan privasi dijaga di satu file. Game cukup memanggil `gwq.push(['game_end', {...}])`. |
 | Retensi data | 14 bulan | Maksimum di GA4 gratis, cukup untuk membandingkan musim. |
 
 ## 2. Privasi dan persetujuan
@@ -53,7 +53,8 @@ Nama event mengikuti event rekomendasi GA4 bila ada (`level_start`, `share`, `ea
 | Event | Parameter | Untuk |
 |---|---|---|
 | `chat_message` | `intent` (`accuse`, `defend`, `ask`, …), `understood` (true/false), `conf_bucket` (`low`, `mid`, `high`) | Kualitas pemahaman bot di dunia nyata, per versi otak |
-| `bot_clarify` | `answered` (true/false) | Apakah pertanyaan konfirmasi bot membantu atau mengganggu |
+| `bot_clarify` | `intent` (tebakan bot) | Seberapa sering bot ragu |
+| `bot_clarify_reply` | `answered` (true jika pemain menjawab ya/bukan) | Apakah pertanyaan konfirmasi bot membantu atau mengganggu |
 | `vote_cast` | `correct` (true/false), `level` | Seberapa sulit menebak pelaku |
 | `sidang_start` | `level` | Seberapa sering terjadi sidang |
 
@@ -61,11 +62,17 @@ Isi pesan **tidak pernah** dikirim, hanya label hasil pemahaman.
 
 ### Kang Parkir
 
+Satu hari kerja = satu permainan: `game_start` (`mode=karier`) dan `game_end` (`result`: `win`, `lose`, `fired`) dikirim per hari, sehingga dashboard bersama tetap bisa membandingkan kedua game.
+
 | Event | Parameter |
 |---|---|
 | `level_start` | `level` (hari), `location`, `tariff` |
-| `level_end` | `level`, `earned`, `target_met`, `escaped` |
+| `level_end` | `level`, `success`, `earned`, `escaped`, `location` |
 | `vehicle_escaped` | `vehicle` (`motor`, `mobil`), `level` |
+| `unlock_achievement` | `achievement_id` (`album:<kendaraan>`) |
+| `spend_virtual_currency` | `virtual_currency_name=tabungan`, `value`, `item_name` |
+
+Kang Parkir tidak punya pertanyaan "bantu bot belajar", jadi izin statistik ditanya lewat kotak kecil di layar akhir hari pertama (bukan pop-up).
 
 ### RONDA (saat terbit)
 
@@ -111,18 +118,18 @@ Satu laporan Looker Studio "Game Warga" dengan filter `game_id` di bagian atas. 
 8. **Kualitas bot** (Siapa yang Nilep?): persentase `understood=true` per `intent` dan `brain_version`, tingkat `bot_clarify` dijawab. Pelengkap laporan `scripts/train.mjs`, bukan pengganti, karena GA tidak melihat isi pesan.
 9. **Eksperimen**: `game_end` per `exp` (tingkat menang, durasi, main lagi). Bisa dibandingkan dengan `ArisanSim.strategyStats`.
 
-## 7. Pemasangan teknis (setelah ada Measurement ID)
+## 7. Pemasangan teknis
 
-1. Portal menyajikan `/gw.js`: memuat `gtag.js`, mengatur consent default ditolak, membaca `gw:consent`, dan menyediakan:
+1. Portal menyajikan `/gw.js`: memuat `gtag.js`, mengatur consent default ditolak, membaca `gw:consent`, dan mengirim setiap event dengan `game_id` dan `platform`. Semua host (pratinjau workers.dev, GitHub Pages, aplikasi) dilaporkan sebagai `https://gamewarga.com/<game>/`.
+2. Game memuat skripnya sendiri (dari `/gw.js` saat di portal, dari `https://gamewarga.thofik93.workers.dev/gw.js` di host lain; konstanta `GW_ORIGIN`, ganti ke gamewarga.com setelah domain aktif) dan mengantrekan event:
    ```js
-   gw.track(name, params)   // menambah game_id & platform otomatis
-   gw.consent(true|false)   // simpan ke gw:consent dan update consent
+   (window.gwq = window.gwq || []).push(['game_end', { result: 'win' }]);
+   (window.gwq = window.gwq || []).push(['_consent', true]);   // jawaban pemain
    ```
-2. Setiap game menambah `<script src="/gw.js" defer></script>` dan memanggil `window.gw?.track(...)` di titik-titik di atas. Jika skrip gagal dimuat (offline, diblokir), `gw` tidak ada dan game tetap jalan.
-3. Build Capacitor: `gw.js` dibundel ke `www/` dan mengirim `page_location` dengan domain gamewarga.com.
-4. Verifikasi di **Admin → DebugView** dengan `?gw_debug=1`, lalu cek laporan Realtime.
-5. Daftarkan dimensi khusus (bagian 5) dan tandai key events.
-6. Perbarui halaman privasi tiap game.
+   Antrean dikirim begitu skrip termuat. Kalau skrip gagal dimuat (offline, diblokir), game tetap jalan. Dari `file://` (uji otomatis) skrip tidak dimuat.
+3. Verifikasi: buka game dengan `?gw_debug=1`, lalu lihat **Admin → DebugView**. Parameter `gcs=G100` di permintaan `/g/collect` berarti belum setuju, `G101` berarti sudah.
+4. Daftarkan dimensi khusus (bagian 5) dan tandai key events.
+5. Halaman privasi kedua game sudah diperbarui (26 Oktober 2026).
 
 ## 8. Yang tidak dilakukan
 
