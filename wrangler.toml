@@ -1,0 +1,17 @@
+# Portal Game Warga (gamewarga.com). Domain dipasang di Worker ini.
+name = "gamewarga"
+main = "src/index.js"
+compatibility_date = "2025-09-01"
+
+[assets]
+directory = "./public"
+binding = "ASSETS"
+
+# Worker setiap game (di-deploy dari repo masing-masing)
+[[services]]
+binding = "SIAPAYANGNILEP"
+service = "siapayangnilep"
+
+[[services]]
+binding = "KANGPARKIR"
+service = "kangparkir"
