@@ -77,12 +77,12 @@ Kang Parkir tidak punya pertanyaan "bantu bot belajar", jadi izin statistik dita
 
 ### Kantong Semesta
 
-Satu shift = satu permainan: `game_start` (`mode=shift`) dan `game_end` (`result`: `win`/`lose`, `reason`: `shift`/`sobek`/`terguling`, `score`).
+Satu shift = satu permainan: `game_start` (`mode=shift`) dan `game_end` (`result`: `win`/`lose`, `reason`: `shift`/`sobek`/`terguling`/`meledak`, `score`).
 
 | Event | Parameter |
 |---|---|
 | `level_start` | `level` (hari), `season` (musim isu atau `biasa`), `bag` |
-| `level_end` | `level`, `success`, `score`, `combos`, `max_aura` |
+| `level_end` | `level`, `success`, `score`, `combos`, `max_aura`, `nekat` (berapa kali nekat dan selamat), `pas` (berapa kali "Muat juga!") |
 | `moral_choice` | `choice` (`lupa`, `sejarah`, `capek`) |
 | `perk_use` | `perk` (`tambal`) |
 | `unlock_achievement` | `achievement_id` (`combo:<id>` atau `rare:<id>`) |
