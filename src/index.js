@@ -10,6 +10,7 @@ const LIVE_FILES = {
 const GAMES = [
   ['/siapayangnilep', 'SIAPAYANGNILEP'],
   ['/kangparkir', 'KANGPARKIR'],
+  ['/kantongsemesta', 'KANTONGSEMESTA'],
 ];
 
 export default {

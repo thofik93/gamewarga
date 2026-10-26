@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Game Warga · Game Online Gratis Buatan Indonesia, Langsung Main di HP</title>
-<meta name="description" content="Game online gratis buatan Indonesia tentang kehidupan warga: Siapa yang Nilep? (game detektif grup arisan) dan Kang Parkir. Tanpa download, tanpa daftar, langsung main di browser HP. Kami juga menerima jasa pembuatan aplikasi dan website.">
+<meta name="description" content="Game online gratis buatan Indonesia tentang kehidupan warga: Siapa yang Nilep? (game detektif grup arisan), Kang Parkir, dan Kantong Semesta. Tanpa download, tanpa daftar, langsung main di browser HP. Kami juga menerima jasa pembuatan aplikasi dan website.">
 <link rel="canonical" href="https://gamewarga.com/">
 <meta name="theme-color" content="#fff4e6">
 <meta property="og:type" content="website">
@@ -19,7 +19,7 @@
 <link rel="icon" href="/favicon-48.png" sizes="48x48" type="image/png">
 <link rel="icon" href="/favicon-192.png" sizes="192x192" type="image/png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://gamewarga.com/#org","name":"Game Warga","url":"https://gamewarga.com/","logo":"https://gamewarga.com/icon-512.png","email":"halo@gamewarga.com","description":"Studio game indie dan jasa pembuatan software dari Indonesia.","areaServed":"ID","makesOffer":{"@type":"Offer","itemOffered":{"@type":"Service","name":"Jasa pembuatan aplikasi HP, website, dan sistem bisnis","areaServed":"ID"}}},{"@type":"WebSite","@id":"https://gamewarga.com/#site","name":"Game Warga","url":"https://gamewarga.com/","inLanguage":"id-ID","publisher":{"@id":"https://gamewarga.com/#org"}},{"@type":"ItemList","name":"Game di Game Warga","itemListElement":[{"@type":"ListItem","position":1,"url":"https://gamewarga.com/siapayangnilep/","name":"Siapa yang Nilep?"},{"@type":"ListItem","position":2,"url":"https://gamewarga.com/kangparkir/","name":"Kang Parkir"}]}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://gamewarga.com/#org","name":"Game Warga","url":"https://gamewarga.com/","logo":"https://gamewarga.com/icon-512.png","email":"halo@gamewarga.com","description":"Studio game indie dan jasa pembuatan software dari Indonesia.","areaServed":"ID","makesOffer":{"@type":"Offer","itemOffered":{"@type":"Service","name":"Jasa pembuatan aplikasi HP, website, dan sistem bisnis","areaServed":"ID"}}},{"@type":"WebSite","@id":"https://gamewarga.com/#site","name":"Game Warga","url":"https://gamewarga.com/","inLanguage":"id-ID","publisher":{"@id":"https://gamewarga.com/#org"}},{"@type":"ItemList","name":"Game di Game Warga","itemListElement":[{"@type":"ListItem","position":1,"url":"https://gamewarga.com/siapayangnilep/","name":"Siapa yang Nilep?"},{"@type":"ListItem","position":2,"url":"https://gamewarga.com/kangparkir/","name":"Kang Parkir"},{"@type":"ListItem","position":3,"url":"https://gamewarga.com/kantongsemesta/","name":"Kantong Semesta"}]}]}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
@@ -89,6 +89,12 @@
         <p>Atur motor dan mobil di parkiran sempit, tagih tarifnya, jangan sampai ada yang kabur.</p>
         <span class="meta">👆 Santai · ±3 menit</span></div>
       <span class="play">Main</span></a></li>
+    <li><a class="game" href="/kantongsemesta/" data-game="kantongsemesta" data-key="kantong:save">
+      <img class="thumb" src="/img/kantongsemesta-thumb.png" alt="" width="72" height="72">
+      <div class="txt"><span class="recent" hidden>Terakhir kamu main</span><h2>Kantong Semesta</h2>
+        <p>Satu kantong kresek, semua isu masuk. Dari helm sampai kelelahan melihat timeline. Jangan sampai sobek.</p>
+        <span class="meta">🛍️ Absurd · ±3 menit</span></div>
+      <span class="play">Main</span></a></li>
     <li><div class="game soon" aria-label="RONDA, segera hadir">
       <div class="thumb" aria-hidden="true">🔦</div>
       <div class="txt"><h2>RONDA</h2><p>Jaga kampung sampai subuh. Tuyul, pocong, dan kuntilanak sedang ramai.</p>
@@ -106,7 +112,7 @@
 
   <footer>
     Studio game indie dan jasa software · <span style="white-space:nowrap">Buatan Indonesia 🇮🇩</span><br>
-    <a href="/siapayangnilep/privacy.html">Privasi Siapa yang Nilep?</a> · <a href="/kangparkir/privacy.html">Privasi Kang Parkir</a>
+    <a href="/siapayangnilep/privacy.html">Privasi Siapa yang Nilep?</a> · <a href="/kangparkir/privacy.html">Privasi Kang Parkir</a> · <a href="/kantongsemesta/privacy">Privasi Kantong Semesta</a>
   </footer>
 </main>
 <script src="/gw.js" data-game="portal" async></script>
@@ -115,7 +121,7 @@
   (function(){
     var list=document.getElementById('games');
     var played=[].slice.call(document.querySelectorAll('a.game[data-key]')).filter(function(a){
-      try{var v=localStorage.getItem(a.dataset.key);if(!v)return false;var j=JSON.parse(v);return !!j&&((j.stats&&j.stats.games>0)||j.xp>0||j.day>1);}catch(e){return false;}
+      try{var v=localStorage.getItem(a.dataset.key);if(!v)return false;var j=JSON.parse(v);return !!j&&((j.stats&&(j.stats.games>0||j.stats.shifts>0))||j.xp>0||j.day>1);}catch(e){return false;}
     });
     played.reverse().forEach(function(a){
       a.querySelector('.play').textContent='Lanjutkan';

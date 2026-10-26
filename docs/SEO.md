@@ -11,6 +11,7 @@ Kata kunci dipilih dari cara orang Indonesia mengetik di HP: pendek, bahasa seha
 | `/` portal | game online gratis Indonesia | game browser tanpa download, game ringan HP, game buatan Indonesia, game kasual Indonesia |
 | `/siapayangnilep/` | game detektif online | game seperti werewolf bahasa Indonesia, game mafia online, game arisan, game ibu-ibu lucu, game deduksi sosial |
 | `/kangparkir/` | game tukang parkir | game parkir motor, game parkir online, game kang parkir, game satu jari |
+| `/kantongsemesta/` | game absurd Indonesia | game kresek, game satir Indonesia, game isu viral, game kasual lucu, game satu tangan |
 | Kartu jasa (portal) | jasa pembuatan aplikasi | jasa bikin website, jasa pembuatan software Indonesia |
 
 Batasan: kata "bandar" dan "tebak" tidak dipakai di judul, deskripsi, dan materi promosi, karena sering kena filter perjudian.

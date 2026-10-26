@@ -75,6 +75,22 @@ Satu hari kerja = satu permainan: `game_start` (`mode=karier`) dan `game_end` (`
 
 Kang Parkir tidak punya pertanyaan "bantu bot belajar", jadi izin statistik ditanya lewat kotak kecil di layar akhir hari pertama (bukan pop-up).
 
+### Kantong Semesta
+
+Satu shift = satu permainan: `game_start` (`mode=shift`) dan `game_end` (`result`: `win`/`lose`, `reason`: `shift`/`sobek`/`terguling`, `score`).
+
+| Event | Parameter |
+|---|---|
+| `level_start` | `level` (hari), `season` (musim isu atau `biasa`), `bag` |
+| `level_end` | `level`, `success`, `score`, `combos`, `max_aura` |
+| `moral_choice` | `choice` (`lupa`, `sejarah`, `capek`) |
+| `perk_use` | `perk` (`tambal`) |
+| `unlock_achievement` | `achievement_id` (`combo:<id>` atau `rare:<id>`) |
+| `spend_virtual_currency` | `virtual_currency_name=poin`, `value`, `item_name` (`bag:<id>` atau `perk:<id>`) |
+| `share` | `method` (`native_image`, `native`, `download`), `content_type` (`result`, `fail`) |
+
+Izin statistik ditanya lewat kotak kecil di layar akhir shift pertama, sama seperti Kang Parkir.
+
 ### RONDA (saat terbit)
 
 `room_create`, `room_join` (`players`), `ghost_caught` (`ghost`), plus event bersama.

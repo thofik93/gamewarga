@@ -7,6 +7,7 @@ Portal game indie tentang kehidupan warga, sekaligus etalase jasa pembuatan soft
 | `/` | Beranda portal | repo ini (`public/`) |
 | `/siapayangnilep/` | Siapa yang Nilep? (ARISAN) | thofik93/arisan |
 | `/kangparkir/` | Kang Parkir | thofik93/kang-parkir |
+| `/kantongsemesta/` | Kantong Semesta | thofik93/kantong-semesta |
 | `/ronda/` | RONDA (segera) | belum dipublikasikan |
 
 ## Cara kerja
@@ -25,7 +26,7 @@ Worker `gamewarga` (`src/index.js`) menyajikan beranda dari `public/` dan meneru
 
 **Email.** `halo@gamewarga.com` dan alamat catch-all diteruskan ke Gmail pemilik lewat Cloudflare Email Routing. Untuk membalas sebagai halo@, pakai fitur "Send mail as" di Gmail (SMTP `smtp.gmail.com` dengan App Password), dan tambahkan `include:_spf.google.com` ke record SPF.
 
-Data permainan setiap game tersimpan di perangkat dengan awalan sendiri (`arisan:`, `kangparkir:`, `ronda:`), jadi tidak bentrok walaupun berbagi domain.
+Data permainan setiap game tersimpan di perangkat dengan awalan sendiri (`arisan:`, `kangparkir:`, `kantong:`, `ronda:`), jadi tidak bentrok walaupun berbagi domain.
 
 ## Deploy
 ```bash
