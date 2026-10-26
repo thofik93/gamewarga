@@ -12,6 +12,7 @@ const GAMES = [
   ['/kangparkir', 'KANGPARKIR'],
   ['/kantongsemesta', 'KANTONGSEMESTA'],
   ['/ingusmelerkrl', 'INGUSMELERKRL'],
+  ['/mancingdiamdiam', 'MANCINGDIAMDIAM'],
 ];
 
 export default {

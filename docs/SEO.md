@@ -13,6 +13,7 @@ Kata kunci dipilih dari cara orang Indonesia mengetik di HP: pendek, bahasa seha
 | `/kangparkir/` | game tukang parkir | game parkir motor, game parkir online, game kang parkir, game satu jari |
 | `/kantongsemesta/` | game absurd Indonesia | game kresek, game satir Indonesia, game isu viral, game kasual lucu, game satu tangan |
 | `/ingusmelerkrl/` | game KRL lucu | game commuter line, game ingus, game absurd Jakarta, game komedi satu jari, game kereta |
+| `/mancingdiamdiam/` | game mancing online | game mancing ikan, game mancing HP, game suami takut istri, game komedi keluarga, game satu jari |
 | Kartu jasa (portal) | jasa pembuatan aplikasi | jasa bikin website, jasa pembuatan software Indonesia |
 
 Batasan: kata "bandar" dan "tebak" tidak dipakai di judul, deskripsi, dan materi promosi, karena sering kena filter perjudian.

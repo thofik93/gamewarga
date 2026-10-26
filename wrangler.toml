@@ -30,3 +30,7 @@ service = "kantongsemesta"
 [[services]]
 binding = "INGUSMELERKRL"
 service = "ingusmelerkrl"
+
+[[services]]
+binding = "MANCINGDIAMDIAM"
+service = "mancingdiamdiam"

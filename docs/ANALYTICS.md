@@ -104,6 +104,19 @@ Satu stasiun = satu permainan: `game_start` (`mode=stasiun`) dan `game_end` (`re
 
 Izin statistik ditanya lewat kotak kecil di layar hasil stasiun pertama, sama seperti Kang Parkir.
 
+### Mancing Diam-Diam
+
+Satu bab = satu sesi. Event langsung lewat `track()` di `src/main.js`, tanpa `game_start`/`game_end`.
+
+| Event | Parameter |
+|---|---|
+| `chapter_start` | `chapter` (1–5) |
+| `chapter_clear` | `chapter` |
+| `fail` | `chapter`, `why` (`sneak`, `sneakTime`, `rope`, `ropeTime`, `clock`, `kid`) |
+| `game_clear` | (tanpa parameter) |
+
+Izin statistik ditanya lewat kotak kecil di panel gagal, beranda (setelah pernah main), atau layar tamat.
+
 ### RONDA (saat terbit)
 
 `room_create`, `room_join` (`players`), `ghost_caught` (`ghost`), plus event bersama.
