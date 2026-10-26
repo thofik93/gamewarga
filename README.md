@@ -18,7 +18,7 @@ Data permainan setiap game tersimpan di perangkat dengan awalan sendiri (`arisan
 ```bash
 npx wrangler@4.152.0 deploy
 ```
-Sementara: https://gamewarga.thofik93.workers.dev
+Alamat Worker cadangan: https://gamewarga.thofik93.workers.dev
 
 ## Analytics
 Desain Google Analytics 4 untuk semua game: [docs/ANALYTICS.md](docs/ANALYTICS.md).
