@@ -91,6 +91,19 @@ Satu shift = satu permainan: `game_start` (`mode=shift`) dan `game_end` (`result
 
 Izin statistik ditanya lewat kotak kecil di layar akhir shift pertama, sama seperti Kang Parkir.
 
+### Ingus Meler KRL
+
+Satu stasiun = satu permainan: `game_start` (`mode=stasiun`) dan `game_end` (`result`: `win`/`lose`, `level`, `duration_s`, `score` = bintang, `reason` = ending: `sempurna`, `selamat`, `viral`, `diusir`, `epic`, `rahasia`).
+
+| Event | Parameter |
+|---|---|
+| `level_start` | `level` (stasiun ke-n, 1–7) |
+| `level_end` | `level`, `success`, `ending`, `stars` |
+| `power` | `id` (`tissue`, `ac`, `tidur`, `permen`) |
+| `share` | `ending` |
+
+Izin statistik ditanya lewat kotak kecil di layar hasil stasiun pertama, sama seperti Kang Parkir.
+
 ### RONDA (saat terbit)
 
 `room_create`, `room_join` (`players`), `ghost_caught` (`ghost`), plus event bersama.

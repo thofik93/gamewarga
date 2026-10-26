@@ -26,3 +26,7 @@ service = "kangparkir"
 [[services]]
 binding = "KANTONGSEMESTA"
 service = "kantongsemesta"
+
+[[services]]
+binding = "INGUSMELERKRL"
+service = "ingusmelerkrl"

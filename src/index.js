@@ -11,6 +11,7 @@ const GAMES = [
   ['/siapayangnilep', 'SIAPAYANGNILEP'],
   ['/kangparkir', 'KANGPARKIR'],
   ['/kantongsemesta', 'KANTONGSEMESTA'],
+  ['/ingusmelerkrl', 'INGUSMELERKRL'],
 ];
 
 export default {
