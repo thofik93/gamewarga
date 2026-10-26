@@ -34,13 +34,14 @@ Semua event membawa parameter `game_id` (`siapayangnilep`, `kangparkir`, `ronda`
 |---|---|---|---|
 | `page_view` | otomatis | — | Berapa yang datang ke tiap game |
 | `game_card_click` | Kartu game di portal diketuk | `game_id`, `position`, `continued` (true jika tombolnya "Lanjutkan") | Game mana yang paling menarik dari portal |
-| `contact_click` | Tombol "Konsultasi lewat email" (jasa software) di portal diketuk | `topic` | Berapa calon klien yang datang dari portal |
+| `contact_click` | Tombol "Konsultasi lewat email" atau "Salin" email (jasa software) di portal diketuk | `topic`, `method` (`email`, `copy`) | Berapa calon klien yang datang dari portal |
+| `notify_click` | Tombol "Kabari saya" di kartu game yang segera hadir | `target_game` | Seberapa ditunggu game berikutnya |
 | `game_start` | Permainan dimulai | `mode` (`bot`, `pass`, `daily`, `online`), `players` | Berapa pengunjung yang benar-benar main |
 | `level_start` | Babak/hari baru | `level` (hari ke-n) | Di babak mana orang berhenti |
 | `game_end` | Permainan selesai | `result` (`win`, `lose`), `duration_s`, `role`, `level` | Tingkat menang, lama main |
 | `game_quit` | Keluar sebelum selesai (tab ditutup, kembali ke beranda) | `stage` (`night`, `chat`, `vote`, `day`), `level`, `duration_s` | Titik keluar terbesar |
 | `tutorial_begin` / `tutorial_complete` | Cara main dibuka / selesai dibaca | — | Apakah tutorial dibutuhkan |
-| `share` | Tombol bagikan | `method` (`native`, `copy`, `wa`), `content_type` (`result`, `invite`) | Seberapa viral |
+| `share` | Tombol bagikan (di game, atau "Bagikan" di kartu portal) | `method` (`native`, `copy`, `wa`), `content_type` (`result`, `invite`, `game_card`), `target_game` (hanya dari portal) | Seberapa viral |
 | `sponsor_view` / `sponsor_click` | Slot sponsor tampil / diketuk | `slot`, `sponsor_id` | Laporan ke sponsor |
 | `earn_virtual_currency` / `spend_virtual_currency` | Kue/tabungan bertambah/dipakai | `virtual_currency_name`, `value`, `item_name` | Ekonomi game seimbang atau tidak |
 | `unlock_achievement` | Lencana/kosmetik terbuka | `achievement_id` | Apa yang memotivasi main lagi |
