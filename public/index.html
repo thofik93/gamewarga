@@ -6,7 +6,7 @@
 <title>Game Warga · Game Online Gratis Buatan Indonesia, Langsung Main di HP</title>
 <meta name="description" content="Game online gratis buatan Indonesia tentang kehidupan warga: Siapa yang Nilep? (game detektif grup arisan), Kang Parkir, dan Kantong Semesta. Tanpa download, tanpa daftar, langsung main di browser HP. Kami juga menerima jasa pembuatan aplikasi dan website.">
 <link rel="canonical" href="https://gamewarga.com/">
-<meta name="theme-color" content="#fff4e6">
+<meta name="theme-color" content="#111014">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Game Warga">
 <meta property="og:title" content="Game Warga: game seru dari kehidupan warga">
@@ -22,88 +22,157 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://gamewarga.com/#org","name":"Game Warga","url":"https://gamewarga.com/","logo":"https://gamewarga.com/icon-512.png","email":"halo@gamewarga.com","description":"Studio game indie dan jasa pembuatan software dari Indonesia.","areaServed":"ID","makesOffer":{"@type":"Offer","itemOffered":{"@type":"Service","name":"Jasa pembuatan aplikasi HP, website, dan sistem bisnis","areaServed":"ID"}}},{"@type":"WebSite","@id":"https://gamewarga.com/#site","name":"Game Warga","url":"https://gamewarga.com/","inLanguage":"id-ID","publisher":{"@id":"https://gamewarga.com/#org"}},{"@type":"ItemList","name":"Game di Game Warga","itemListElement":[{"@type":"ListItem","position":1,"url":"https://gamewarga.com/siapayangnilep/","name":"Siapa yang Nilep?"},{"@type":"ListItem","position":2,"url":"https://gamewarga.com/kangparkir/","name":"Kang Parkir"},{"@type":"ListItem","position":3,"url":"https://gamewarga.com/kantongsemesta/","name":"Kantong Semesta"}]}]}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700;800;900&display=swap" rel="stylesheet">
 <style>
+  /* gelap di kedua mode sistem: tampilan studio game, bukan tampilan aplikasi kasir */
   :root{
-    --bg:#fff4e6;--card:#ffffff;--ink:#2b1a1f;--muted:#6b5a5f;--line:#f0dcc6;
-    --accent:#ff7a1a;--accent-ink:#2b1a1f;--chip:#fde7cf;--focus:#c2410c;
-    color-scheme:light;
+    --bg:#111014;--bg2:#1a181e;--card:#1d1b22;--card2:#25222b;--ink:#f7f2ea;--muted:#aaa2ad;--line:rgba(255,255,255,.09);
+    --accent:#ff6b1a;--accent2:#ffb02e;--accent-ink:#140c06;--focus:#ffb02e;
+    --cut:14px;color-scheme:dark;
   }
-  @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
-    --bg:#1d1418;--card:#2a1e23;--ink:#fff1e6;--muted:#d6bfc6;--line:#3d2b31;--accent:#ff8a33;--chip:#3a2a30;--focus:#ffb37a;color-scheme:dark}}
-  :root[data-theme="dark"]{--bg:#1d1418;--card:#2a1e23;--ink:#fff1e6;--muted:#d6bfc6;--line:#3d2b31;--accent:#ff8a33;--chip:#3a2a30;--focus:#ffb37a;color-scheme:dark}
   *,*::before,*::after{box-sizing:border-box}
-  body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.45 Nunito,system-ui,sans-serif}
-  main{max-width:640px;margin:0 auto;padding:22px max(16px,env(safe-area-inset-left,0px)) 36px max(16px,env(safe-area-inset-right,0px))}
+  html{background:var(--bg)}
+  body{margin:0;min-height:100vh;color:var(--ink);font:16px/1.5 Rubik,system-ui,-apple-system,Roboto,"Noto Sans",sans-serif;
+    background:radial-gradient(900px 520px at 100% -10%,rgba(255,107,26,.22),transparent 60%),radial-gradient(700px 500px at -20% 40%,rgba(255,176,46,.07),transparent 60%),linear-gradient(90deg,#111014,#1a181e 50%,#111014);background-attachment:fixed;overflow-x:hidden}
+  /* garis kisi tipis di belakang, hanya hiasan */
+  body::before{content:"";position:fixed;inset:0;pointer-events:none;background:repeating-linear-gradient(90deg,transparent 0 calc(25% - 1px),rgba(255,255,255,.035) calc(25% - 1px) 25%);z-index:0}
+  main{position:relative;z-index:1;max-width:1080px;margin:0 auto;padding:18px max(16px,env(safe-area-inset-left,0px)) 40px max(16px,env(safe-area-inset-right,0px))}
+  .top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:4px 0 10px;border-bottom:1px solid var(--line)}
   .brand{display:flex;align-items:center;gap:10px}
-  .mark{width:36px;height:36px;border-radius:11px;background:var(--accent);color:#fff4e6;display:grid;place-items:center;font:900 16px/1 'Baloo 2',sans-serif}
-  .brand b{font:800 20px/1 'Baloo 2',sans-serif}
-  h1{font:800 clamp(1.7rem,7.5vw,2.4rem)/1.08 'Baloo 2',sans-serif;margin:16px 0 4px}
-  .lead{color:var(--muted);margin:0 0 16px;font-weight:700}
+  .mark{width:38px;height:38px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:var(--accent-ink);display:grid;place-items:center;font:900 15px/1 Rubik,sans-serif;clip-path:polygon(0 0,calc(100% - 9px) 0,100% 9px,100% 100%,9px 100%,0 calc(100% - 9px))}
+  .brand b{font:800 15px/1 Rubik,sans-serif;letter-spacing:.18em;text-transform:uppercase}
+  .top .tag{font-size:11.5px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+
+  .hero{position:relative;padding:34px 0 26px}
+  .hero .ghost{position:absolute;right:-4px;top:6px;font:900 clamp(5rem,26vw,15rem)/.8 Rubik,sans-serif;letter-spacing:-.04em;color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.07);pointer-events:none;user-select:none;white-space:nowrap}
+  .eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--accent2)}
+  .eyebrow::before{content:"";width:28px;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent2))}
+  h1{position:relative;font:900 clamp(2.5rem,11.5vw,5.4rem)/.92 Rubik,sans-serif;letter-spacing:-.02em;text-transform:uppercase;margin:14px 0 14px}
+  h1 em{font-style:normal;background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .lead{position:relative;color:var(--muted);margin:0;font-size:16.5px;max-width:34em}
+  .lead b{color:var(--ink);font-weight:500}
+
+  .label{display:flex;align-items:center;gap:12px;margin:8px 0 14px;font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+  .label span{color:var(--accent2)}
+  .label::after{content:"";flex:1;height:1px;background:var(--line)}
+
   .games{display:grid;gap:12px;margin:0;padding:0;list-style:none}
   /* satu kartu = satu ketukan: seluruh kartu adalah tautan, tombol "Main" hanya penanda */
-  .game{display:grid;grid-template-columns:72px minmax(0,1fr) auto;align-items:center;gap:12px;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:10px 12px 10px 10px;color:inherit;text-decoration:none;box-shadow:0 4px 14px rgba(80,40,20,.07);transition:transform .12s}
+  .game{position:relative;isolation:isolate;display:grid;grid-template-columns:76px minmax(0,1fr) auto;align-items:center;gap:14px;background:linear-gradient(160deg,var(--card2),var(--card));padding:12px 14px 12px 12px;color:inherit;text-decoration:none;
+    clip-path:polygon(0 0,calc(100% - var(--cut)) 0,100% var(--cut),100% 100%,var(--cut) 100%,0 calc(100% - var(--cut)));transition:transform .18s,background .18s}
+  .game::after{content:"";position:absolute;inset:0;border:1px solid var(--line);pointer-events:none;z-index:-1}
+  a.game:hover{background:linear-gradient(160deg,#2d2933,var(--card2))}
   a.game:active{transform:scale(.985)}
-  a.game:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
-  .thumb{width:72px;height:72px;border-radius:14px;object-fit:cover;display:block}
-  .thumb.kp{object-fit:contain;background:linear-gradient(135deg,#2e7d6b,#1f4f63);padding:8px}
+  a.game:focus-visible{outline:3px solid var(--focus);outline-offset:-3px}
+  .thumb{width:76px;height:76px;object-fit:cover;display:block;clip-path:polygon(0 0,calc(100% - 10px) 0,100% 10px,100% 100%,10px 100%,0 calc(100% - 10px))}
+  .thumb.kp{object-fit:contain;background:linear-gradient(135deg,#2e7d6b,#1f4f63);padding:9px}
   .txt{min-width:0}
-  .txt h2{font:800 1.18rem/1.15 'Baloo 2',sans-serif;margin:0}
-  .txt p{margin:2px 0 6px;color:var(--muted);font-size:14px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-  .meta{display:block;font-size:12.5px;font-weight:800;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-  .play{background:var(--accent);color:var(--accent-ink);font-weight:800;border-radius:999px;padding:8px 13px;font-size:15px;white-space:nowrap}
-  .recent{font-size:12px;font-weight:800;color:var(--focus);display:block;margin-bottom:1px;letter-spacing:.02em}
+  .txt h2{font:800 1.12rem/1.1 Rubik,sans-serif;text-transform:uppercase;letter-spacing:.01em;margin:0}
+  .txt p{margin:4px 0 7px;color:var(--muted);font-size:14px;line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .meta{display:block;font-size:11.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .play{background:linear-gradient(90deg,var(--accent),var(--accent2));color:var(--accent-ink);font-weight:800;font-size:14px;letter-spacing:.12em;text-transform:uppercase;padding:10px 18px;white-space:nowrap;clip-path:polygon(9px 0,100% 0,calc(100% - 9px) 100%,0 100%)}
+  .recent{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:4px}
   .recent[hidden]{display:none}
-  .soon{box-shadow:none;background:transparent;border-style:dashed}
+
+  /* kartu paling atas (atau yang terakhir dimainkan) tampil besar: satu ajakan utama */
+  .games>li:first-child .game{grid-template-columns:116px minmax(0,1fr);gap:16px;padding:18px;min-height:220px;align-content:end;background:var(--card)}
+  .games>li:first-child .game::before{content:"";position:absolute;inset:-30px;z-index:-2;background:linear-gradient(180deg,rgba(17,16,20,0),rgba(17,16,20,.9) 80%),var(--img) center/cover;filter:blur(20px) saturate(1.3);opacity:.7}
+  .games>li:first-child .thumb{width:116px;height:116px;box-shadow:0 10px 30px rgba(0,0,0,.4)}
+  .games>li:first-child .txt h2{font-size:clamp(1.5rem,6vw,2.1rem);font-weight:900;line-height:1}
+  .games>li:first-child .txt p{-webkit-line-clamp:3;color:#d3cbd2}
+  .games>li:first-child .play{grid-column:1/-1;text-align:center;font-size:16px;padding:15px 18px}
+
+  .soon{clip-path:none;background:transparent;border:1px dashed rgba(255,255,255,.18)}
+  .soon::after{display:none}
   .soon .thumb{display:grid;place-items:center;background:linear-gradient(135deg,#1b2340,#0d1020);font-size:34px}
-  .soon .badge{font-size:12.5px;font-weight:800;color:var(--muted);white-space:nowrap}
+  .soon .txt h2{color:var(--muted)}
+  .soon .badge{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
+
+  /* pita berjalan: hiasan, di bawah daftar game */
+  .ticker{margin:34px calc(-1*max(16px,env(safe-area-inset-left,0px)));overflow:hidden;border-block:1px solid var(--line);background:rgba(255,107,26,.06);transform:rotate(-1.2deg)}
+  .ticker div{display:flex;width:max-content;animation:run 28s linear infinite}
+  .ticker span{padding:12px 0;font:800 14px/1 Rubik,sans-serif;letter-spacing:.22em;text-transform:uppercase;white-space:nowrap;color:var(--ink)}
+  .ticker i{font-style:normal;color:var(--accent);padding:0 18px}
+  @keyframes run{to{transform:translateX(-50%)}}
+
   /* jasa IT: di bawah daftar game supaya tidak bersaing dengan tombol Main */
-  .biz{margin-top:28px;background:var(--chip);border-radius:18px;padding:16px}
-  .biz .eyebrow{font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--focus)}
-  .biz h2{font:800 1.3rem/1.15 'Baloo 2',sans-serif;margin:4px 0 6px}
-  .biz p{margin:0 0 12px;color:var(--muted);font-size:14.5px}
-  .biz .cta{display:block;text-align:center;background:var(--ink);color:var(--bg);font-weight:800;text-decoration:none;border-radius:999px;padding:12px 16px}
+  .biz{position:relative;margin-top:8px;padding:26px 20px 22px;background:linear-gradient(140deg,#231d1b,#18161b 60%);clip-path:polygon(0 0,calc(100% - 22px) 0,100% 22px,100% 100%,22px 100%,0 calc(100% - 22px))}
+  .biz::after{content:"";position:absolute;inset:0;border:1px solid rgba(255,107,26,.25);pointer-events:none}
+  .biz h2{font:900 clamp(1.6rem,7vw,2.6rem)/.98 Rubik,sans-serif;text-transform:uppercase;letter-spacing:-.01em;margin:12px 0 10px}
+  .biz p{margin:0 0 18px;color:var(--muted);font-size:15px;max-width:36em}
+  .biz .cta{display:block;text-align:center;background:var(--ink);color:var(--bg);font-weight:800;font-size:14px;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;padding:15px 18px;clip-path:polygon(10px 0,100% 0,calc(100% - 10px) 100%,0 100%)}
+  .biz .cta:hover{background:#fff}
   .biz .cta:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
-  .biz .mail{display:block;text-align:center;margin-top:8px;font-size:13.5px;font-weight:700;color:var(--muted);user-select:all}
-  footer{margin-top:24px;color:var(--muted);font-size:13.5px;text-align:center}
+  .biz .mail{display:block;text-align:center;margin-top:10px;font-size:13.5px;color:var(--muted);user-select:all}
+  footer{margin-top:30px;padding-top:18px;border-top:1px solid var(--line);color:var(--muted);font-size:13px;text-align:center;line-height:1.7}
   footer a{color:inherit}
-  @media (prefers-reduced-motion:reduce){.game{transition:none}}
+
+  @media (min-width:760px){
+    main{padding-top:24px}
+    .hero{padding:64px 0 46px}
+    .lead{font-size:18px}
+    .games{grid-template-columns:1fr 1fr;gap:16px}
+    .games>li:first-child{grid-column:1/-1}
+    .games>li:first-child .game{grid-template-columns:180px minmax(0,1fr) auto;min-height:300px;padding:28px;gap:24px;align-items:end}
+    .games>li:first-child .thumb{width:180px;height:180px}
+    .games>li:first-child .play{grid-column:auto;padding:16px 34px}
+    .biz{display:grid;grid-template-columns:1.3fr 1fr;gap:10px 40px;align-items:end;padding:40px}
+    .biz .eyebrow,.biz h2,.biz p{grid-column:1}
+    .biz .cta,.biz .mail{grid-column:2}
+    .biz .cta{grid-row:2}
+    .biz .mail{grid-row:3;align-self:start}
+  }
+  @media (prefers-reduced-motion:reduce){.game{transition:none}.ticker div{animation:none}}
 </style>
 </head>
 <body>
 <main>
-  <div class="brand"><span class="mark" aria-hidden="true">GW</span><b>Game Warga</b></div>
-  <h1>Pilih game, langsung main</h1>
-  <p class="lead">Game online gratis buatan Indonesia. Tanpa download, tanpa daftar.</p>
+  <header class="top">
+    <div class="brand"><span class="mark" aria-hidden="true">GW</span><b>Game Warga</b></div>
+    <span class="tag">Gratis · Tanpa daftar</span>
+  </header>
 
+  <section class="hero">
+    <span class="ghost" aria-hidden="true">WARGA</span>
+    <span class="eyebrow">Studio game indie · Indonesia</span>
+    <h1>Pilih game,<br><em>langsung main.</em></h1>
+    <p class="lead">Game online gratis tentang kehidupan warga. <b>Tanpa download, tanpa daftar</b>, buka di HP lalu main.</p>
+  </section>
+
+  <div class="label"><span>01</span> Game kami</div>
   <ul class="games" id="games">
-    <li><a class="game" href="/siapayangnilep/" data-game="siapayangnilep" data-key="arisan:profile">
-      <img class="thumb" src="/img/siapayangnilep-thumb.png" alt="" width="72" height="72">
+    <li><a class="game" href="/siapayangnilep/" data-game="siapayangnilep" data-key="arisan:profile" style="--img:url(/img/siapayangnilep-thumb.png)">
+      <img class="thumb" src="/img/siapayangnilep-thumb.png" alt="" width="76" height="76">
       <div class="txt"><span class="recent" hidden>Terakhir kamu main</span><h2>Siapa yang Nilep?</h2>
         <p>Uang kas arisan hilang, pelakunya ada di grup. Cari tahu sebelum kasnya habis.</p>
-        <span class="meta">💬 Detektif · ±5 menit</span></div>
+        <span class="meta">Detektif · ±5 menit</span></div>
       <span class="play">Main</span></a></li>
-    <li><a class="game" href="/kangparkir/" data-game="kangparkir" data-key="kangparkir:save2">
-      <img class="thumb kp" src="/img/kangparkir-icon.png" alt="" width="72" height="72">
+    <li><a class="game" href="/kangparkir/" data-game="kangparkir" data-key="kangparkir:save2" style="--img:linear-gradient(135deg,#2e7d6b,#1f4f63)">
+      <img class="thumb kp" src="/img/kangparkir-icon.png" alt="" width="76" height="76">
       <div class="txt"><span class="recent" hidden>Terakhir kamu main</span><h2>Kang Parkir</h2>
         <p>Atur motor dan mobil di parkiran sempit, tagih tarifnya, jangan sampai ada yang kabur.</p>
-        <span class="meta">👆 Santai · ±3 menit</span></div>
+        <span class="meta">Santai · ±3 menit</span></div>
       <span class="play">Main</span></a></li>
-    <li><a class="game" href="/kantongsemesta/" data-game="kantongsemesta" data-key="kantong:save">
-      <img class="thumb" src="/img/kantongsemesta-thumb.png" alt="" width="72" height="72">
+    <li><a class="game" href="/kantongsemesta/" data-game="kantongsemesta" data-key="kantong:save" style="--img:url(/img/kantongsemesta-thumb.png)">
+      <img class="thumb" src="/img/kantongsemesta-thumb.png" alt="" width="76" height="76">
       <div class="txt"><span class="recent" hidden>Terakhir kamu main</span><h2>Kantong Semesta</h2>
         <p>Satu kantong kresek, semua isu masuk. Dari helm sampai kelelahan melihat timeline. Jangan sampai sobek.</p>
-        <span class="meta">🛍️ Absurd · ±3 menit</span></div>
+        <span class="meta">Absurd · ±3 menit</span></div>
       <span class="play">Main</span></a></li>
     <li><div class="game soon" aria-label="RONDA, segera hadir">
       <div class="thumb" aria-hidden="true">🔦</div>
       <div class="txt"><h2>RONDA</h2><p>Jaga kampung sampai subuh. Tuyul, pocong, dan kuntilanak sedang ramai.</p>
-        <span class="meta">👻 Horor kocak · 2–4 orang</span></div>
+        <span class="meta">Horor kocak · 2–4 orang</span></div>
       <span class="badge">Segera hadir</span></div></li>
   </ul>
 
+  <div class="ticker" aria-hidden="true"><div>
+    <span>Gratis<i>✦</i>Tanpa download<i>✦</i>Tanpa daftar<i>✦</i>Langsung main di HP<i>✦</i>Buatan Indonesia<i>✦</i></span>
+    <span>Gratis<i>✦</i>Tanpa download<i>✦</i>Tanpa daftar<i>✦</i>Langsung main di HP<i>✦</i>Buatan Indonesia<i>✦</i></span>
+  </div></div>
+
   <section class="biz" aria-labelledby="bizTitle">
-    <span class="eyebrow">Jasa pembuatan software</span>
+    <span class="eyebrow">02 · Jasa pembuatan software</span>
     <h2 id="bizTitle">Butuh aplikasi atau website?</h2>
     <p>Tim di balik Game Warga juga membuat aplikasi HP, website, dan sistem untuk bisnis. Ceritakan kebutuhanmu, kami balas lewat email.</p>
     <a class="cta" id="bizMail" href="mailto:halo@gamewarga.com?subject=Konsultasi%20pembuatan%20software&body=Halo%20Game%20Warga%2C%0A%0ASaya%20ingin%20konsultasi%20soal%3A%0A%0ABentuknya%20(aplikasi%20HP%20%2F%20website%20%2F%20lainnya)%3A%0ATarget%20selesai%3A%0A">Konsultasi lewat email</a>
