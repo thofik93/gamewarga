@@ -17,7 +17,7 @@ Batasan: kata "bandar" dan "tebak" tidak dipakai di judul, deskripsi, dan materi
 
 ## 2. Yang sudah dipasang (26 Oktober 2026)
 
-- **Satu alamat resmi.** Setiap halaman punya `<link rel="canonical">` ke gamewarga.com. Game yang sama juga bisa dibuka di GitHub Pages dan workers.dev, dan tanpa canonical Google bisa menganggapnya duplikat dan memilih alamat yang salah. `www.gamewarga.com` dialihkan permanen (301) ke `gamewarga.com`.
+- **Satu alamat resmi.** Setiap halaman punya `<link rel="canonical">` ke gamewarga.com. Alamat lama (GitHub Pages, workers.dev) sudah ditutup sejak 26 Oktober 2026: workers.dev mati, dan GitHub Pages hanya halaman pindahan dengan `noindex` dan canonical ke gamewarga.com, jadi Google memindahkan indeksnya ke domain resmi. `www.gamewarga.com` dialihkan permanen (301) ke `gamewarga.com`.
 - **Judul dan deskripsi** memuat kata kunci utama, maksimal sekitar 60 dan 160 karakter:
   - Portal: "Game Warga · Game Online Gratis Buatan Indonesia, Langsung Main di HP"
   - "Siapa yang Nilep? · Game Detektif Arisan Online Gratis"

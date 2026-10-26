@@ -22,7 +22,7 @@
   gtag('consent', 'default', denied);
   if (read() === 'granted') gtag('consent', 'update', { analytics_storage: 'granted' });
   gtag('js', new Date());
-  // semua host (pratinjau workers.dev, GitHub Pages, aplikasi) dilaporkan sebagai alamat gamewarga.com
+  // aplikasi HP (Capacitor, host localhost) juga dilaporkan sebagai alamat gamewarga.com
   var path = game === 'portal' ? '/' : '/' + game + '/';
   var cfg = {
     page_location: 'https://gamewarga.com' + path + location.search,

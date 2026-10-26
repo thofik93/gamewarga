@@ -121,8 +121,8 @@ Satu laporan Looker Studio "Game Warga" dengan filter `game_id` di bagian atas. 
 
 ## 7. Pemasangan teknis
 
-1. Portal menyajikan `/gw.js`: memuat `gtag.js`, mengatur consent default ditolak, membaca `gw:consent`, dan mengirim setiap event dengan `game_id` dan `platform`. Semua host (pratinjau workers.dev, GitHub Pages, aplikasi) dilaporkan sebagai `https://gamewarga.com/<game>/`.
-2. Game memuat skripnya sendiri (dari `/gw.js` saat di portal, dari `https://gamewarga.thofik93.workers.dev/gw.js` di host lain; konstanta `GW_ORIGIN`, ganti ke gamewarga.com setelah domain aktif) dan mengantrekan event:
+1. Portal menyajikan `/gw.js`: memuat `gtag.js`, mengatur consent default ditolak, membaca `gw:consent`, dan mengirim setiap event dengan `game_id` dan `platform`. Aplikasi HP (Capacitor) juga dilaporkan sebagai `https://gamewarga.com/<game>/`.
+2. Game memuat skripnya sendiri (dari `/gw.js` saat di portal, dari `https://gamewarga.com/gw.js` di aplikasi HP; konstanta `GW_ORIGIN`) dan mengantrekan event:
    ```js
    (window.gwq = window.gwq || []).push(['game_end', { result: 'win' }]);
    (window.gwq = window.gwq || []).push(['_consent', true]);   // jawaban pemain
