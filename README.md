@@ -22,3 +22,5 @@ Alamat Worker cadangan: https://gamewarga.thofik93.workers.dev
 
 ## Analytics
 Desain Google Analytics 4 untuk semua game: [docs/ANALYTICS.md](docs/ANALYTICS.md).
+
+SEO (kata kunci, sitemap, data terstruktur, Search Console, rencana konten): [docs/SEO.md](docs/SEO.md).
