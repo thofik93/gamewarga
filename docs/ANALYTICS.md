@@ -34,6 +34,7 @@ Semua event membawa parameter `game_id` (`siapayangnilep`, `kangparkir`, `ronda`
 |---|---|---|---|
 | `page_view` | otomatis | — | Berapa yang datang ke tiap game |
 | `game_card_click` | Kartu game di portal diketuk | `game_id`, `position`, `continued` (true jika tombolnya "Lanjutkan") | Game mana yang paling menarik dari portal |
+| `contact_click` | Tombol "Konsultasi lewat email" (jasa software) di portal diketuk | `topic` | Berapa calon klien yang datang dari portal |
 | `game_start` | Permainan dimulai | `mode` (`bot`, `pass`, `daily`, `online`), `players` | Berapa pengunjung yang benar-benar main |
 | `level_start` | Babak/hari baru | `level` (hari ke-n) | Di babak mana orang berhenti |
 | `game_end` | Permainan selesai | `result` (`win`, `lose`), `duration_s`, `role`, `level` | Tingkat menang, lama main |
