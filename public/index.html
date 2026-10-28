@@ -19,7 +19,7 @@
 <link rel="icon" href="/favicon-48.png" sizes="48x48" type="image/png">
 <link rel="icon" href="/favicon-192.png" sizes="192x192" type="image/png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://gamewarga.com/#org","name":"GameWarga","url":"https://gamewarga.com/","logo":"https://gamewarga.com/icon-512.png","email":"halo@gamewarga.com","description":"Studio game indie Indonesia yang mengubah kehidupan sehari-hari menjadi pengalaman bermain orisinal.","areaServed":"ID"},{"@type":"WebSite","@id":"https://gamewarga.com/#site","name":"GameWarga","url":"https://gamewarga.com/","inLanguage":"id-ID","publisher":{"@id":"https://gamewarga.com/#org"}},{"@type":"ItemList","name":"Game dari GameWarga","itemListElement":[{"@type":"ListItem","position":1,"url":"https://gamewarga.com/siapayangnilep/","name":"Siapa yang Nilep?"},{"@type":"ListItem","position":2,"url":"https://gamewarga.com/kangparkir/","name":"Kang Parkir"},{"@type":"ListItem","position":3,"url":"https://gamewarga.com/kantongsemesta/","name":"Kantong Semesta"},{"@type":"ListItem","position":4,"url":"https://gamewarga.com/ingusmelerkrl/","name":"Ingus Meler KRL"},{"@type":"ListItem","position":5,"url":"https://gamewarga.com/mancingdiamdiam/","name":"Mancing Diam-Diam"}]}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://gamewarga.com/#org","name":"GameWarga","url":"https://gamewarga.com/","logo":"https://gamewarga.com/icon-512.png","email":"halo@gamewarga.com","description":"Studio game indie Indonesia yang mengubah kehidupan sehari-hari menjadi pengalaman bermain orisinal.","areaServed":"ID","makesOffer":{"@type":"Offer","itemOffered":{"@type":"Service","name":"Pengembangan website, aplikasi, sistem bisnis, dan game web","areaServed":"ID"}}},{"@type":"WebSite","@id":"https://gamewarga.com/#site","name":"GameWarga","url":"https://gamewarga.com/","inLanguage":"id-ID","publisher":{"@id":"https://gamewarga.com/#org"}},{"@type":"ItemList","name":"Game dari GameWarga","itemListElement":[{"@type":"ListItem","position":1,"url":"https://gamewarga.com/siapayangnilep/","name":"Siapa yang Nilep?"},{"@type":"ListItem","position":2,"url":"https://gamewarga.com/kangparkir/","name":"Kang Parkir"},{"@type":"ListItem","position":3,"url":"https://gamewarga.com/kantongsemesta/","name":"Kantong Semesta"},{"@type":"ListItem","position":4,"url":"https://gamewarga.com/ingusmelerkrl/","name":"Ingus Meler KRL"},{"@type":"ListItem","position":5,"url":"https://gamewarga.com/mancingdiamdiam/","name":"Mancing Diam-Diam"}]}]}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800;900&family=Rubik:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -35,7 +35,7 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--yellow);outline-off
 .site-header{position:relative;z-index:5;border-bottom:1px solid var(--line);background:rgba(15,31,26,.92)}
 .nav{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}
 .brand{display:inline-flex;align-items:center;gap:12px;text-decoration:none}
-.brand-mark{width:42px;height:42px;display:grid;place-items:center;background:var(--yellow);color:var(--forest);font:900 14px/1 Rubik,sans-serif;border-radius:13px 13px 13px 4px;transform:rotate(-3deg);box-shadow:4px 4px 0 var(--orange)}
+.brand-mark{width:42px;height:42px;display:block;object-fit:contain;border-radius:12px;flex:none}
 .brand-name{font:900 20px/1 Rubik,sans-serif;letter-spacing:-.6px}
 .brand-name span{color:var(--yellow)}
 .nav-tag{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:800}
@@ -162,7 +162,7 @@ footer{padding:30px 0 34px;background:var(--forest);color:#a9b7ae}
 <header class="site-header">
   <nav class="nav container" aria-label="Navigasi utama">
     <a class="brand" href="/" aria-label="GameWarga, beranda">
-      <span class="brand-mark" aria-hidden="true">GW</span>
+      <img class="brand-mark" src="/img/gamewarga-mark.svg" alt="" width="42" height="42">
       <span class="brand-name">GAME<span>WARGA</span></span>
     </a>
     <div class="nav-links">
@@ -251,8 +251,8 @@ footer{padding:30px 0 34px;background:var(--forest);color:#a9b7ae}
 
   <section class="cta-section" id="kontak">
     <div class="container cta-wrap">
-      <div><div class="section-kicker">03 / Tetap terhubung</div><h2>Punya ide, kritik, atau ingin bikin sesuatu bareng?</h2><p>Studio kecil, ide banyak. Kami terbuka untuk obrolan yang menarik.</p></div>
-      <a class="btn" id="bizMail" href="mailto:halo@gamewarga.com?subject=Halo%20GameWarga">Hubungi GameWarga ↗</a>
+      <div><div class="section-kicker">03 / Kolaborasi</div><h2>Punya ide digital? Mari wujudkan.</h2><p>Selain membuat game sendiri, kami menerima proyek terpilih untuk website, aplikasi, dan sistem bisnis.</p></div>
+      <a class="btn" id="bizMail" href="mailto:halo@gamewarga.com?subject=Konsultasi%20proyek%20digital">Konsultasi proyek ↗</a>
     </div>
   </section>
 </main>
@@ -275,12 +275,14 @@ footer{padding:30px 0 34px;background:var(--forest);color:#a9b7ae}
   var played=cards.filter(hasProgress).sort(function(a,b){return lastPlayed(b)-lastPlayed(a);});
   // Preserve each game's local save and bring recently played games forward without changing URLs.
   played.slice().reverse().forEach(function(card){list.insertBefore(card,list.firstChild);});
+  // One prominent featured card; it follows the player's most recently played game when available.
+  var firstCard=list.querySelector('.game-card[data-game]');if(firstCard)firstCard.classList.add('featured');
   if(played.length){var flags=played[0].querySelector('.flags');var recent=played[0].querySelector('.recent');if(recent){recent.textContent=lastPlayed(played[0])?'Terakhir kamu main':'Pernah kamu main';recent.hidden=false;}}
   cards.forEach(function(card){
     var game=card.dataset.game;
     var go=card.querySelector('.title-link');
     var play=card.querySelector('.game-play');
-    if(play && go && !play.id)play.addEventListener('click',function(){try{localStorage.setItem('gw:last:'+game,String(Date.now()));}catch(e){};track('game_card_click',{target_game:game,position:[].indexOf.call(list.children,card)+1,continued:played.indexOf(card)>=0});});
+    if(play && go){var openGame=function(){try{localStorage.setItem('gw:last:'+game,String(Date.now()));}catch(e){};track('game_card_click',{target_game:game,position:[].indexOf.call(list.children,card)+1,continued:played.indexOf(card)>=0});};play.addEventListener('click',openGame);go.addEventListener('click',openGame);}
     var share=card.querySelector('.game-share');
     if(share && go)share.addEventListener('click',function(){
       var name=go.textContent.trim(),url=go.href,text='Main '+name+' di GameWarga. Gratis, langsung di HP:';
