@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title">
+<title id="title">GameWarga mascot mark</title>
+<rect x="2" y="2" width="124" height="124" rx="28" fill="#ffb82e"/>
+<!-- hair silhouette -->
+<path d="M25 51 17 33 37 37 40 17 55 30 68 11 78 30 99 20 96 40 113 45 104 61 96 70H29Z" fill="#0f1f1a"/>
+<!-- face -->
+<path d="M31 48Q31 34 46 34H82Q98 34 98 51V73Q98 92 64 96Q30 92 30 73Z" fill="#f6f1e6" stroke="#0f1f1a" stroke-width="5" stroke-linejoin="round"/>
+<path d="M43 58Q49 50 55 58M73 58Q79 50 85 58" fill="none" stroke="#0f1f1a" stroke-width="4.5" stroke-linecap="round"/>
+<circle cx="64" cy="69" r="7" fill="#ff6b3d" stroke="#0f1f1a" stroke-width="3"/>
+<!-- controller in foreground -->
+<path d="M20 76Q22 69 31 70L44 73H84L97 70Q106 69 109 78L115 94Q118 106 106 108L91 104 79 95H49L37 104 22 108Q10 106 13 94Z" fill="#f6f1e6" stroke="#0f1f1a" stroke-width="6" stroke-linejoin="round"/>
+<path d="M33 82V96M26 89H40" stroke="#0f1f1a" stroke-width="5" stroke-linecap="round"/>
+<circle cx="91" cy="84" r="4.5" fill="#ff6b3d"/>
+<circle cx="101" cy="94" r="4.5" fill="#ff6b3d"/>
+<!-- playful spark -->
+<path d="M104 15 111 5M113 28 125 25M101 3 103 0" stroke="#ff6b3d" stroke-width="5" stroke-linecap="round"/>
+</svg>
